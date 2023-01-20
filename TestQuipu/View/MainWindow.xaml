@@ -1,0 +1,52 @@
+﻿<Window x:Class="TestQuipu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodel="clr-namespace:TestQuipu.ViewModel"
+        xmlns:local="clr-namespace:TestQuipu"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <viewmodel:AppViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock> Введите путь к файлу с URL</TextBlock>
+            <Button Command="{Binding OpenFileWithUrlCommand}"> Прочиать файл с URL</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Visibility="{Binding Visible}">
+            <DataGrid AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Urls}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn  Header="ссылка Url" Binding="{Binding Path=Url}"/>
+                    <DataGridTextColumn  Header="количество тегов a" Binding="{Binding Path=ColOfLinkTags}"/>
+                </DataGrid.Columns>
+                <DataGrid.CellStyle>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding MaxValue}" Value="True">
+                                <Setter Property="Foreground" Value="Green" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.CellStyle>
+            </DataGrid>
+            <Button Command="{Binding CountLinksFromUrlsCommand}">Начать парсинг</Button>
+            <TextBlock Visibility="{Binding ProgressVisible}">
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="{}обрабатывается url:{0} Прогресс{1}/{2}">
+                        <Binding Path="CurrentUrl"/>
+                        <Binding Path="CurrentProgerssbar"/>
+                        <Binding Path="MaxProgerssbar"/>
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+
+            <Button Visibility="{Binding ProgressVisible}" Command="{Binding CanselParsingCommand}"> отменить парсинг</Button>
+        </StackPanel>
+    </Grid>
+</Window>

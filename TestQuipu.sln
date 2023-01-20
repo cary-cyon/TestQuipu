@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestQuipu", "TestQuipu\TestQuipu.csproj", "{EB0FF388-05D6-4C33-92CC-0FFA83FDD750}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestQuipuTests", "TestQuipuTests\TestQuipuTests.csproj", "{A393FED6-1289-4C71-B3CB-A418E88ACAA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB0FF388-05D6-4C33-92CC-0FFA83FDD750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB0FF388-05D6-4C33-92CC-0FFA83FDD750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB0FF388-05D6-4C33-92CC-0FFA83FDD750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB0FF388-05D6-4C33-92CC-0FFA83FDD750}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A393FED6-1289-4C71-B3CB-A418E88ACAA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A393FED6-1289-4C71-B3CB-A418E88ACAA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A393FED6-1289-4C71-B3CB-A418E88ACAA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A393FED6-1289-4C71-B3CB-A418E88ACAA2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6B0A8D4-A831-4A0B-98F4-07C14FBA1FFB}
+	EndGlobalSection
+EndGlobal
