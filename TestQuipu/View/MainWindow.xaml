@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <TextBlock> Введите путь к файлу с URL</TextBlock>
-            <Button Command="{Binding OpenFileWithUrlCommand}"> Прочиать файл с URL</Button>
+            <Button Command="{Binding OpenFileWithUrlCommand}"> Прочитать файл с URL</Button>
         </StackPanel>
         <StackPanel Grid.Row="1" Visibility="{Binding Visible}">
             <DataGrid AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Urls}">
